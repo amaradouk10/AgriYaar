@@ -17,7 +17,7 @@
     <?= $aibody['basket/mini'] ?? '' ?>
 @stop
 
-@section('aimeos_nav')
+@section('_nav')
     <?= $aibody['catalog/filter'] ?? '' ?>
     <?= $aibody['catalog/search'] ?? '' ?>
     <?= $aibody['catalog/tree'] ?? '' ?>

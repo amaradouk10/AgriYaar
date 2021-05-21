@@ -4,19 +4,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
 	@yield('aimeos_header')
 
 	<title>{{ config('app.name', 'Aimeos') }}</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css">
 
 	<style>
-		/* Theme: Black&White */
-		/* body {
-			--ai-primary: #000; --ai-primary-light: #000; --ai-primary-alt: #fff;
-			--ai-bg: #fff; --ai-bg-light: #fff; --ai-bg-alt: #000;
-			--ai-secondary: #555; --ai-light: #D0D0D0;
-		} */
 		body { color: #000; color: var(--ai-primary, #000); background-color: #fff; background-color: var(--ai-bg, #fff); }
 		.navbar { color: #555; color: var(--ai-primary-alt, #555) }
 		.navbar a, .navbar a:before, .navbar span, footer a { color: #555 !important; color: var(--ai-primary-alt, #555) !important; }
@@ -31,7 +24,7 @@
 <body class="aimeos">
 	<nav class="navbar navbar-expand-md navbar-light">
 		<a class="navbar-brand" href="/">
-			<img src="https://aimeos.org/fileadmin/template/icons/logo.png" height="30" title="Aimeos Logo">
+			<img src="{{asset('img/logofilrouge.png')}}"  title="Aimeos Logo">
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -42,10 +35,10 @@
 					<li class="nav-item"><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
 				@endif
 				@if (Auth::guest())
-					<li class="nav-item"><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+					<li class="nav-item"><a class="nav-link" href="{{ route('login') }}"><img src="{{asset('img/user.svg')}}" alt=""width="40px"  height="50px"></a></li>
 				@else
 					<li class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ __('Profile') }} <span class="caret"></span></a>
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{asset('img/user.svg')}}" alt=""width="40px"  height="50px"><span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							@if (config('app.shop_registration'))
 								<li><a class="nav-link" href="{{ route('aimeos_shop_admin') }}" title="{{ __('Merchant') }}">{{ __('Merchant') }}</a></li>
@@ -66,22 +59,50 @@
 		@yield('aimeos_aside')
 		@yield('content')
 	</div>
-	<footer class="mt-5 p-5">
-		<div class="row">
-			<div class="col-md-8">
-				<div class="row">
-					<div class="col-sm-6 my-4"><h2>{{ __('LEGAL') }}</h2><p><a href="#">{{ __('Terms & Conditions') }}</a></p><p><a href="#">{{ __('Privacy Notice') }}</a></p><p><a href="#">{{ __('Imprint') }}</a></p></div>
-					<div class="col-sm-6 my-4"><h2>{{ __('ABOUT US') }}</h2><p><a href="#">{{ __('Contact us') }}</a></p><p><a href="#">{{ __('Company') }}</a></p></div>
-				</div>
-			</div>
-			<div class="col-md-4 my-4">
-				<div class="social"><a href="#" class="sm facebook" title="Facebook" rel="noopener"></a><a href="#" class="sm twitter" title="Twitter" rel="noopener"></a><a href="#" class="sm instagram" title="Instagram" rel="noopener"></a><a href="#" class="sm youtube" title="Youtube" rel="noopener"></a></div>
-				<a class="px-2 py-4 d-inline-block" href="/"><img src="https://aimeos.org/fileadmin/template/icons/logo.png" style="width: 160px" title="Aimeos Logo"></a>
-			</div>
-		</div>
-	</footer>
+    <footer class="footer-distributed section">
+
+        <div class="footer-left">
+
+            <h3><img src="{{asset('img/logofilrouge.png')}}"  height="140px"></h3>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                <a href="#">Blog</a>
+                <a href="#">Pricing</a>
+                <a href="#">About</a>
+            </p>
+
+            <p class="footer-company-name">AgriYaar © 2021</p>
+
+            <div class="footer-icons m-3">
+
+                <a href="#"><img src="{{asset('img/facbook.png')}}"  width="30px" height="30px"></a>
+                <a href="#"><img src="{{asset('img/github.png')}}"  width="30px" height="30px"></a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p>Contact Us</p>
+
+            <form action="#" method="post">
+
+                <input type="text" name="email" placeholder="Email">
+                <textarea name="message" placeholder="Message"></textarea>
+                <button>Send</button>
+
+            </form>
+
+        </div>
+
+    </footer>
 	<!-- Scripts -->
 	<script src="https://cdn.jsdelivr.net/combine/npm/jquery@3,npm/bootstrap@4"></script>
 	@yield('aimeos_scripts')
 	</body>
 </html>
+{{-- @extends('base')
+@section('content')
+@endsection --}}
