@@ -26,6 +26,12 @@
 		<a class="navbar-brand" href="/">
 			<img src="{{asset('img/logofilrouge.png')}}"  title="Aimeos Logo">
 		</a>
+        <form action="" method="post" class="search">
+            <input  type="text">
+            <button type="submit">
+                <img src="{{asset('img/search.png')}}" alt="">
+            </button>
+       </form>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -52,11 +58,11 @@
 			@yield('aimeos_head')
 		</div>
 	</nav>
-	<div class="content">
+	 <div class="content">
 		@yield('aimeos_stage')
 		@yield('aimeos_nav')
 		@yield('aimeos_body')
-		@yield('aimeos_aside')
+    	@yield('aimeos_aside')
 		@yield('content')
 	</div>
     <footer class="footer-distributed section">

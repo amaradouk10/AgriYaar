@@ -11076,4 +11076,27 @@ a.text-dark:focus {
 		float: none;
 	}
 }
-
+/*header search bar*/
+.search {
+    display: block;
+    max-width: 515px;
+    width: 450px;
+    margin: 50px;
+    border: none;
+    border-radius: 22px;
+    border: 2px solid #C4C4C4;
+    background: white;
+    height: 40px;
+}
+.search input {
+    width: 90%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: none;
+}
+.search button{
+    background: none;
+    border: none;
+    padding-top: 5px;
+}
