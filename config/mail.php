@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'mailtrap.io'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 587),
+    'port' => env('MAIL_PORT', 2525),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'Amaradouk10@gmail.com'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
@@ -120,7 +120,15 @@ return [
         ],
     ],
 
-    /*
+    'stream' => [
+        'tls' => [
+            'allow_self_signed' =>true,
+            'verify_peer' =>false,
+            'verify_peer_name' =>false
+        ],
+    ],
+
+    /*se
     |--------------------------------------------------------------------------
     | Log Channel
     |--------------------------------------------------------------------------
