@@ -2,8 +2,12 @@
 
 @section('content')
 <div class="container auth">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row m-5">
+        <div class="col-md-6">
+            <img src="{{asset('img/Plan de travail – 1.png')}}" alt="" height="430px" width="470px">
+        </div>
+        <div class="col-md-6">
+            <h4>Vous avez deja un compte? <a href="http://127.0.0.1:8000/login" class="text-center">connectez vous</a></h4>
             <div class="card">
                 @if(config('app.shop_registration'))
                     <div class="card-header">{{ __('Merchant registration') }}</div>
@@ -31,12 +35,12 @@
                                     @enderror
                                 </div>
                             @else
-                                <label for="name" class="col-md-5 col-form-label text-md-right">{{ __('Name') }}</label>
+                                <label for="name" class="col-md-5 col-form-label text-md-right">{{ __('Nom') }}</label>
 
                                 <div class="col-md-7">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
                                         name="name" value="{{ old('name') }}" required autocomplete="off" autofocus
-                                        placeholder="{{ __('Your name') }}">
+                                        placeholder="{{ __('votre nom') }}">
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -48,12 +52,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-5 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-5 col-form-label text-md-right">{{ __('Addresse E-mail') }}</label>
 
                             <div class="col-md-7">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                                     name="email" value="{{ old('email') }}" required autocomplete="email"
-                                    placeholder="{{ __('Valid e-mail address') }}">
+                                    placeholder="{{ __('addresse e-mail Valid') }}">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -64,12 +68,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-5 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-5 col-form-label text-md-right">{{ __('Mot De Passe') }}</label>
 
                             <div class="col-md-7">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
                                     name="password" required autocomplete="new-password"
-                                    placeholder="{{ __('Eight characters minimum') }}">
+                                    placeholder="{{ __('8 characteres minimum') }}">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -80,12 +84,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-5 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-5 col-form-label text-md-right">{{ __('Confirmez votre Mot de passe') }}</label>
 
                             <div class="col-md-7">
                                 <input id="password-confirm" type="password" class="form-control"
                                     name="password_confirmation" required autocomplete="new-password"
-                                    placeholder="{{ __('Repeat password') }}">
+                                    placeholder="{{ __('Repetez le Mot de pass') }}">
                             </div>
                         </div>
 

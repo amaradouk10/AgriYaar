@@ -1275,7 +1275,6 @@ html.no-js .catalog-filter-price:hover .price-lists {
 	margin: 1em 1%;
 	width: 400px;
     border: oldlace 3px solid;
-    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
 }
 
 .catalog-list .product a {
@@ -5832,3 +5831,5 @@ body{
 	max-height: 20rem;
 	max-width: 100%;
 }
+
+
