@@ -17,3 +17,10 @@ Route::get('/', '\Aimeos\Shop\Controller\CatalogController@homeAction')->name('a
 
 Route::get('{path?}', '\Aimeos\Shop\Controller\PageController@indexAction')
     ->name('aimeos_page')->where( 'path', '.*' );
+
+// Route qui permet de connaître la langue active
+Route::get('locale', 'LocalizationController@getLang')->name('getlang');
+
+// Route qui permet de modifier la langue
+Route::get('locale/{lang}', 'LocalizationController@setLang')->name('setlang');
+
