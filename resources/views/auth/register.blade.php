@@ -14,7 +14,18 @@
                 @else
                     <div class="card-header">{{ __('Registration') }}</div>
                 @endif
-
+                <div class="results container-fluid">
+                    @if (Session::get('success'))
+                        <p class="alert alert-success">
+                            {{ Session::get('success') }}
+                        </p>
+                    @endif
+                    @if (Session::get('fail'))
+                    <div class="alert alert-danger">
+                        {{ Session::get('fail') }}
+                    </div>
+                    @endif
+                </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf

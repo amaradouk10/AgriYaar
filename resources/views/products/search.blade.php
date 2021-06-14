@@ -7,7 +7,7 @@
 	@yield('aimeos_header')
 
 	<title>{{ config('app.name', 'Aimeos') }}</title>
-    <link rel="stylesheet" href="{{asset('font/css/all.min.css')}}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css">
 
 	<style>
 		body { color: #000; color: var(--ai-primary, #000); background-color: #fff; background-color: var(--ai-bg, #fff); }
@@ -27,7 +27,7 @@
 			<img src="{{asset('img/logofilrouge.png')}}"  title="Aimeos Logo">
 		</a>
         <form action="{{ route('products.search')}}" class="search">
-            <input  type="text" name="query">
+            <input  type="text" name="query" >
             <button type="submit">
                 <img src="{{asset('img/search.png')}}" alt="">
             </button>
@@ -63,8 +63,7 @@
 		@yield('aimeos_nav')
 	    @yield('aimeos_body')
     	@yield('aimeos_aside')
-
-	    @yield('content')
+		@yield('content')
 	</div>
     <footer class="footer-distributed section">
 
@@ -83,8 +82,8 @@
 
             <div class="footer-icons m-3">
 
-                <a href="https://web.facebook.com/AgriYaar-forum-107888687641140"><img src="{{asset('img/facbook.png')}}"  width="30px" height="30px"></a>
-                <a href="https://github.com/amaradouk10/AgriYaar.git"><img src="{{asset('img/github.png')}}"  width="30px" height="30px"></a>
+                <a href="#"><img src="{{asset('img/facbook.png')}}"  width="30px" height="30px"></a>
+                <a href="#"><img src="{{asset('img/github.png')}}"  width="30px" height="30px"></a>
 
             </div>
 
